@@ -1,0 +1,103 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+  --font-sans: "DM Sans", system-ui, -apple-system, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  --color-studio-bg: #0D0E11;
+  --color-studio-panel: #14161B;
+  --color-studio-raised: #1B1E25;
+  --color-studio-hover: #222630;
+  --color-studio-border: #272B35;
+  --color-studio-border-strong: #363C4A;
+  --color-studio-ink: #F2EFE9;
+  --color-studio-muted: #9AA0AE;
+  --color-studio-dim: #6C7280;
+  --color-studio-accent: #D99B43;
+  --color-studio-accent-hover: #E5AA54;
+}
+
+@layer base {
+  html, body {
+    background-color: #0D0E11;
+    color: #F2EFE9;
+    font-family: var(--font-sans);
+    letter-spacing: 0.005em;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    text-wrap: balance;
+  }
+
+  button:not(:disabled), [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+
+  :focus-visible {
+    outline: 2px solid #D99B43;
+    outline-offset: 2px;
+  }
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Precision studio sliders */
+input[type="range"].studio-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  height: 18px;
+  cursor: pointer;
+}
+
+input[type="range"].studio-slider::-webkit-slider-runnable-track {
+  height: 3px;
+  border-radius: 2px;
+  background: #2C313D;
+}
+
+input[type="range"].studio-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 12px;
+  height: 12px;
+  border-radius: 999px;
+  background: #F2EFE9;
+  border: 2px solid #0D0E11;
+  margin-top: -4.5px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.6);
+  transition: transform 120ms cubic-bezier(0.16, 1, 0.3, 1), background-color 120ms ease;
+}
+
+input[type="range"].studio-slider:hover::-webkit-slider-thumb,
+input[type="range"].studio-slider:focus-visible::-webkit-slider-thumb {
+  background: #D99B43;
+  transform: scale(1.12);
+}
+
+/* Restrained studio scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0D0E11;
+}
+::-webkit-scrollbar-thumb {
+  background: #272B35;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3A404F;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "name": "Frameflow Studio",
+  "description": "AI-powered nonlinear photo and video editing studio with intelligent reframing, structured editable timelines, non-destructive color and photo grading, and real server-side rendering.",
+  "requestFramePermissions": ["microphone"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
